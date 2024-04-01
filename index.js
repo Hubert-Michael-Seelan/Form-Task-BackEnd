@@ -66,7 +66,12 @@ app.put("/updateEmp/:id", (req, res)=>{
   .then(employee => res.json(employee))
   .catch(error => console.log(error))
 })
-
+app.delete("/deleteEmp",(req, res)=>{
+  const id = req.params.id;
+  Employee.findByIdAndDelete({_id:id})
+  .then(res => res.json(res))
+  .catch(error => console.log(error))
+})
 app.get("/",(req, res)=>{
   res.send("Express App is Running")
 })
