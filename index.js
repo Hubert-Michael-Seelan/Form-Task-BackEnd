@@ -60,8 +60,8 @@ app.get("/allEmp",(req, res)=>{
   .catch(error => console.log(error))
 })
 app.get("/getEmp/:id",(req, res)=>{
-  const id = req.params.emp_id
-  Employee.findById({emp_id})
+  const id = req.params.id
+  Employee.findById({_id:id})
   .then(employee => res.json(employee))
   .catch(error => console.log(error))
 })
