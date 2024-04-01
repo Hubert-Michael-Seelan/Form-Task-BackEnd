@@ -48,9 +48,25 @@ app.post("/createEmp", async(req, res)=>{
     name: req.body.name,
   })
 })
+app.put("/updateEmp/:id", (req, res)=>{
+  const id = req.params.id;
+  Employee.findByIdAndUpdate({_id:id},{
+    name: req.body.name,
+    dob: req.body.dob,
+    phone: req.body.phone,
+    email: req.body.email,
+    department: req.body.department,
+    doj: req.body.doj,
+    rep: req.body.rep,
+    experience: req.body.experience,
+    salary: req.body.salary,
+    linkedin: req.body.linkedin,
+    idproof: req.body.idproof,
+  })
+  .then(employee => res.json(employee))
+  .catch(error => console.log(error))
+})
 
-
-//API Creation
 app.get("/",(req, res)=>{
   res.send("Express App is Running")
 })
