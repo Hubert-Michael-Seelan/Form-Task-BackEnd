@@ -66,10 +66,10 @@ app.put("/updateEmp/:id", (req, res)=>{
   .then(employee => res.json(employee))
   .catch(error => console.log(error))
 })
-app.delete("/deleteEmp",(req, res)=>{
+app.delete("/deleteEmp/:id",(req, res)=>{
   const id = req.params.id;
   Employee.findByIdAndDelete({_id:id})
-  .then(res => res.json(res))
+  .then(employee => res.json(employee))
   .catch(error => console.log(error))
 })
 app.get("/",(req, res)=>{
