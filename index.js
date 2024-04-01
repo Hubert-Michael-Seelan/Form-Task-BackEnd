@@ -6,7 +6,7 @@ const cors = require("cors");
 const Employee = require("./model/employee");
 
 app.use(express.json());
-app.use(cors({origin: true}));
+app.use(cors({ origin: true}));
 
 //Database Connection 
 mongoose.connect("mongodb+srv://hubertmichaelseelan:7LG8GuS5B4ze05VU@cluster0.44dmf2y.mongodb.net/empdata");
