@@ -46,10 +46,10 @@ const Employee = mongoose.Schema(
       type: String,
       required: true,
     },
-    idproof: {
-      type: String,
-      required: true,
-    },
+    // idproof: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );

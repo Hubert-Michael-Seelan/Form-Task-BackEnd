@@ -38,7 +38,7 @@ app.post("/createEmp", async(req, res)=>{
     experience: req.body.experience,
     salary: req.body.salary,
     linkedin: req.body.linkedin,
-    idproof: req.body.idproof,
+    // idproof: req.body.idproof,
   });
   console.log(employee);
   await employee.save();
